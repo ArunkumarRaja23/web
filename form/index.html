@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="handleSignin(event)">
+        <div>
+            <label for="name">Enter your name:</label>
+            <input type="text" id="name"/>
+        </div>
+        <div>
+            <label for="mail">Enter your Email:</label>
+            <input id="mail"/>
+        </div>
+        <div>
+            <label for="password">Enter your password:</label>
+            <input type="password" id="password"/>
+        </div>
+        <button type="submit">Signin</button>
+    </form>
+    <script>
+        function handleSignin(e){
+            e.preventDefault()
+            const name=e.target[0].value
+            const email=e.target[1].value
+            const pass=e.target[2].value
+
+            let validEmail=false;
+            const emailRegex=/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+            validEmail=emailRegex.test(email)
+            if(!validEmail){
+                alert("Not valid Email")
+            }
+            const passRegex=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&^])[A-Za-z\d@.#$!%*?&]{8,15}$/
+            let validPass=passRegex.test(pass)
+            if(!validPass){
+                alert("Not valid password")
+            } 
+
+            alert("Welcome to Login")
+        }
+    </script>
+</body>
+</html>
