@@ -1,0 +1,14 @@
+The JSON data format is an open standard file (. json) and data format used for data interchange through various forms of technology. The most common use of JSON data and files is to read data from a server for a website or web application to display — and change data given the correct permissions.
+
+Example :-
+ 
+    [
+   {
+     id : "Arun";
+     password : "12345";
+   },
+   {
+    id : "Maverick";
+    password : "2k24";
+}
+]
